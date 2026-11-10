@@ -1,0 +1,111 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: 'Inter', 'SF Pro Display', 'SF Pro Text', ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-counter-coral: var(--counter-coral);
+  --color-counter-coral-soft: var(--counter-coral-soft);
+  --color-counter-coral-foreground: var(--counter-coral-foreground);
+  --color-counter-violet: var(--counter-violet);
+  --color-counter-violet-soft: var(--counter-violet-soft);
+  --color-counter-violet-foreground: var(--counter-violet-foreground);
+  --color-counter-teal: var(--counter-teal);
+  --color-counter-teal-soft: var(--counter-teal-soft);
+  --color-counter-teal-foreground: var(--counter-teal-foreground);
+  --color-counter-amber: var(--counter-amber);
+  --color-counter-amber-soft: var(--counter-amber-soft);
+  --color-counter-amber-foreground: var(--counter-amber-foreground);
+  --color-counter-blue: var(--counter-blue);
+  --color-counter-blue-soft: var(--counter-blue-soft);
+  --color-counter-blue-foreground: var(--counter-blue-foreground);
+  --color-counter-pink: var(--counter-pink);
+  --color-counter-pink-soft: var(--counter-pink-soft);
+  --color-counter-pink-foreground: var(--counter-pink-foreground);
+  --radius-sm: calc(var(--radius) * .6);
+  --radius-md: calc(var(--radius) * .8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+:root {
+  color-scheme: light;
+  --background: oklch(0.97 0.012 260);
+  --foreground: oklch(0.2 0.025 260);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.025 260);
+  --secondary: oklch(0.94 0.018 260);
+  --secondary-foreground: oklch(0.28 0.03 260);
+  --muted-foreground: oklch(0.52 0.035 260);
+  --primary: oklch(0.28 0.09 260);
+  --primary-foreground: oklch(0.98 0.01 260);
+  --border: oklch(0.88 0.02 260);
+  --input: oklch(0.88 0.02 260);
+  --ring: oklch(0.5 0.12 260);
+  --radius: 1rem;
+  --counter-coral: oklch(0.79 0.13 30); --counter-coral-soft: oklch(0.95 0.05 30); --counter-coral-foreground: oklch(0.28 0.07 30);
+  --counter-violet: oklch(0.79 0.12 300); --counter-violet-soft: oklch(0.94 0.05 300); --counter-violet-foreground: oklch(0.29 0.08 300);
+  --counter-teal: oklch(0.79 0.13 175); --counter-teal-soft: oklch(0.94 0.05 175); --counter-teal-foreground: oklch(0.25 0.07 175);
+  --counter-amber: oklch(0.84 0.14 85); --counter-amber-soft: oklch(0.96 0.06 85); --counter-amber-foreground: oklch(0.3 0.07 85);
+  --counter-blue: oklch(0.78 0.13 245); --counter-blue-soft: oklch(0.94 0.05 245); --counter-blue-foreground: oklch(0.25 0.08 245);
+  --counter-pink: oklch(0.8 0.13 350); --counter-pink-soft: oklch(0.95 0.05 350); --counter-pink-foreground: oklch(0.3 0.08 350);
+}
+
+.dark {
+  color-scheme: dark;
+  --background: oklch(0.17 0.025 260);
+  --foreground: oklch(0.96 0.012 260);
+  --card: oklch(0.22 0.03 260);
+  --card-foreground: oklch(0.96 0.012 260);
+  --secondary: oklch(0.27 0.035 260);
+  --secondary-foreground: oklch(0.92 0.012 260);
+  --muted-foreground: oklch(0.7 0.03 260);
+  --primary: oklch(0.86 0.07 260);
+  --primary-foreground: oklch(0.2 0.03 260);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.72 0.1 260);
+  --counter-coral: oklch(0.56 0.13 30); --counter-coral-soft: oklch(0.29 0.06 30); --counter-coral-foreground: oklch(0.98 0.01 30);
+  --counter-violet: oklch(0.55 0.12 300); --counter-violet-soft: oklch(0.29 0.06 300); --counter-violet-foreground: oklch(0.98 0.01 300);
+  --counter-teal: oklch(0.5 0.12 175); --counter-teal-soft: oklch(0.27 0.06 175); --counter-teal-foreground: oklch(0.98 0.01 175);
+  --counter-amber: oklch(0.59 0.14 85); --counter-amber-soft: oklch(0.31 0.07 85); --counter-amber-foreground: oklch(0.98 0.01 85);
+  --counter-blue: oklch(0.53 0.13 245); --counter-blue-soft: oklch(0.28 0.06 245); --counter-blue-foreground: oklch(0.98 0.01 245);
+  --counter-pink: oklch(0.56 0.13 350); --counter-pink-soft: oklch(0.29 0.06 350); --counter-pink-foreground: oklch(0.98 0.01 350);
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  html { min-width: 320px; }
+  body { @apply bg-background text-foreground; font-family: var(--font-sans); }
+  button, a { -webkit-tap-highlight-color: transparent; }
+}
+
+@layer components {
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground; }
+  .counter-card { @apply flex min-h-56 flex-col justify-between rounded-[1.5rem] p-4 shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg sm:min-h-64 sm:rounded-[2rem] sm:p-5; }
+  .counter-action { @apply flex size-16 shrink-0 items-center justify-center rounded-full bg-foreground/10 transition-transform duration-150 hover:bg-foreground/15 active:scale-90 sm:size-[4.5rem]; }
+  .counter-action svg { @apply size-7; }
+  .counter-action-detail { @apply h-20 flex-1 rounded-[1.75rem] bg-foreground/10 sm:h-28; }
+  .counter-action-detail svg { @apply size-9 sm:size-12; }
+  .icon-button { @apply flex size-11 items-center justify-center rounded-full bg-secondary text-foreground transition-colors hover:bg-secondary/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring; }
+  .icon-button svg { @apply size-5; }
+  .primary-button { @apply inline-flex h-11 items-center justify-center gap-2 rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground shadow-sm transition-transform hover:scale-[1.02] active:scale-95; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
